@@ -1,5 +1,7 @@
 name: Github JavaScript Actions CI
 
+env:
+  PRERELEASE_BRANCHES: '' # Comma separated list of prerelease branch names. 'alpha,rc, ...'
 on:
   push:
     branches:
@@ -24,6 +26,8 @@ jobs:
     - name: Establish context
       id: context
       uses: dolittle/establish-context-action@v2 # Replace with ./ if used withing dolittle/establish-context-action
+      with:
+        prerelease-branches: ${{ env.PRERELEASE_BRANCHES }}
 
     - name: Increment version
       id: increment-version
