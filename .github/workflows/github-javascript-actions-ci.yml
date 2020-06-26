@@ -1,7 +1,8 @@
-name: Github JavaScript Actions CI
+name: Github JavaScript Actions CI/CD
 
 env:
   PRERELEASE_BRANCHES: '' # Comma separated list of prerelease branch names. 'alpha,rc, ...'
+
 on:
   push:
     branches:
